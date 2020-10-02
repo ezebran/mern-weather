@@ -1,0 +1,47 @@
+@import './../../variables';
+
+.cities{
+    @include col-ct();
+    padding: 3em 2em 1em;
+    h1{
+        color: $black-txt;
+        font-weight: 700;
+        margin-bottom: 0.4em;
+        font-size: 2em;
+    }
+    p{
+        color: $black-txt;
+        font-style: italic;
+        font-weight: 100;
+    }
+    .cities-list{
+        @include row-ar();
+        padding: 4em 0;
+        width: 60%;
+        max-width: 790px;
+        .city{
+            @include col-ct();
+            border: 2px solid $green;
+            padding: 1em 1.5em;
+            border-radius: 10px;
+            transition: all .2s ease-out;
+            &:hover{
+                border: 2px solid $green2;
+            }
+            &:hover>.city-name{
+                color: $green2;
+            }
+            span{
+                color: $green;
+                font-size: 3em;
+                margin-bottom: 0.5em;
+            }
+            .city-name{
+                color: $green;
+                font-size: 1em;
+                font-weight: 700;
+                transition: all .2s ease-out;
+            }
+        }
+    }
+}

@@ -4,8 +4,8 @@ import './App.scss';
 import './icons/style.css';
 
 import Navigation from './components/Navigation';
-import Home from './components/Home';
-import City from './components/Home/City';
+import Cities from './components/Cities';
+import City from './components/Cities/City';
 import PanelCrud from './components/PanelCrud';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Navigation />
 
-        <Route path="/" exact component={Home} />
+        <Route path="/" exact component={Cities} />
         <Route path="/ciudad/:id" component={City} />
         <Route path="/panel" component={PanelCrud} />
 
