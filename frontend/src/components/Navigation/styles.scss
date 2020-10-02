@@ -1,0 +1,32 @@
+@import './../../variables';
+
+.header{
+    background: $green;
+    width: 100%;
+    @include row-bt();
+    padding: 1em 2em;
+    ul{
+        @include row-bt();
+        li{
+            margin: 0 1.5em;
+        }
+    }
+    .logo-header{
+        color: white;
+        span{
+            font-weight: 700;
+        }
+    }
+}
+
+.navs{
+    padding: 0.3em 0;
+    color: white;
+    font-weight: 500;
+    font-size: 0.845em;
+    border-bottom: 2px solid white;
+    transition: all .1s ease-out;
+    &:hover{
+        padding: 0.5em 0;
+    }
+}
