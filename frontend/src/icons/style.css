@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?54t4r7');
-  src:  url('fonts/icomoon.eot?54t4r7#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?54t4r7') format('truetype'),
-    url('fonts/icomoon.woff?54t4r7') format('woff'),
-    url('fonts/icomoon.svg?54t4r7#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?5xap79');
+  src:  url('fonts/icomoon.eot?5xap79#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?5xap79') format('truetype'),
+    url('fonts/icomoon.woff?5xap79') format('woff'),
+    url('fonts/icomoon.svg?5xap79#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,8 +25,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-delete:before {
+  content: "\e90a";
+}
+.icon-add_location_alt:before {
+  content: "\e909";
+}
+.icon-add-outline:before {
+  content: "\e908";
+}
 .icon-map:before {
   content: "\e907";
+}
+.icon-document-edit:before {
+  content: "\e90b";
 }
 .icon-cloud-sun-lightning:before {
   content: "\e906";
@@ -48,4 +60,7 @@
 }
 .icon-sun:before {
   content: "\e905";
+}
+.icon-pencil2:before {
+  content: "\e90c";
 }

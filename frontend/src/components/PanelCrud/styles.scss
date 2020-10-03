@@ -1,3 +1,82 @@
-h3{
-    color:red;
+@import './../../variables';
+
+.panel{
+    @include col-ct();
+    padding: 3em 2em 1em;
+    h1{
+        color: $black-txt;
+        font-weight: 700;
+        margin-bottom: 0.4em;
+        font-size: 2em;
+    }
+    p{
+        color: $black-txt;
+        font-style: italic;
+        font-weight: 100;
+    }
+    .cities-list-panel{
+        @include col-ct();
+        padding: 4em 0;
+        width: 60%;
+        max-width: 790px;
+        .new-city{
+            @include row-bt();
+            padding: 0.75em 1.5em;
+            border-radius: 10px;
+            transition: all .2s ease-out;
+            border:2px solid $green;
+            box-shadow: 1px 3px 11px 1px #bebebe;
+            &:hover{
+                border:2px solid $green2;
+            }
+            span{
+                color: $green;
+                font-size: 1em;
+                margin-bottom: 0.5em;
+            }
+            .add-city{
+                color: $green;
+                font-size: 1em;
+                font-weight: 700;
+                transition: all .2s ease-out;
+            }
+        }
+        .cities-actions{
+            @include col-ct();
+            width: 470px;
+            margin-top: 4em;
+            .row-list{
+                @include row-bt();
+                padding: 0.5em;
+                width: 100%;
+                background: $green;
+                margin: 0.25em 0;
+                border-radius: 3px;
+                .act-city-name{
+                    color: white;
+                    font-size: 0.9em;
+                    font-weight: 500;
+                }
+                .actions{
+                    @include row-bt();
+                    .delete, .edit{
+                        color: white;
+                        font-size: 0.9em;
+                        font-weight: 400;
+                    }
+                    .edit{
+                        margin-right: 1.5em;
+                        span{
+                            color:#0984e3;
+                        }
+                    }
+                    .delete{
+                        span{
+                            color:#d63031;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

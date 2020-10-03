@@ -19,29 +19,5 @@
         padding: 4em 0;
         width: 60%;
         max-width: 790px;
-        .city{
-            @include col-ct();
-            border: 2px solid $green;
-            padding: 1em 1.5em;
-            border-radius: 10px;
-            transition: all .2s ease-out;
-            &:hover{
-                border: 2px solid $green2;
-            }
-            &:hover>.city-name{
-                color: $green2;
-            }
-            span{
-                color: $green;
-                font-size: 3em;
-                margin-bottom: 0.5em;
-            }
-            .city-name{
-                color: $green;
-                font-size: 1em;
-                font-weight: 700;
-                transition: all .2s ease-out;
-            }
-        }
     }
 }
