@@ -22,6 +22,10 @@ export default class PanelCrud extends Component{
 
   deleteCity = async (cityId) => {
     await axios.delete('http://localhost:4000/api/cities/' + cityId);
+
+    this.setState({cities: this.state.cities.filter(function(city) { 
+      return city._id !== cityId 
+    })});
   }
 
   render(){
@@ -42,7 +46,7 @@ export default class PanelCrud extends Component{
   
               {
                 this.state.cities.map(city => (
-                  <ul className="row-list">
+                  <ul className="row-list" key={city._id}>
                     <li className="act-city-name">{city.nombre}</li>
                     <ul className="actions">
                       <li><Link to={"/panel/edit/" + city._id} className="edit"><span className="icon-document-edit"></span>Editar</Link></li>

@@ -39,7 +39,7 @@ citiesCtrol.updateCity = async (req, res) => {
 
     const { nombre, temperatura, presion, humedad, maxima, minima } = req.body;
 
-    await City.findOneAndUpdate(req.params.id, {
+    await City.findByIdAndUpdate(req.params.id, {
         nombre,
         temperatura,
         presion,

@@ -18,7 +18,7 @@ export default class PanelEdit extends Component {
   }
 
   getCity = async () => {
-    const res = await axios.get('http://localhost:4000/api/cities/' + this.props.location.pathname.slice(12))
+    const res = await axios.get('http://localhost:4000/api/cities/' + this.props.match.params.id)
     this.setState({
       nombre: res.data.nombre,
       temperatura: res.data.temperatura,
@@ -27,6 +27,7 @@ export default class PanelEdit extends Component {
       presion: res.data.presion,
       humedad: res.data.humedad
     });
+    console.log(this.props.match.params.id)
   }
 
   onSubmit = async (e) => {
@@ -39,7 +40,7 @@ export default class PanelEdit extends Component {
       presion: this.state.presion,
       humedad: this.state.humedad
     };
-    axios.put('http://localhost:4000/api/cities/' + this.props.location.pathname.slice(12), updateCity);
+    axios.put('http://localhost:4000/api/cities/' + this.props.match.params.id, updateCity);
     window.location.href = '/';
 
 }
