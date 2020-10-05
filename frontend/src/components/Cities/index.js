@@ -1,37 +1,44 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios'
 import './styles.scss';
 
-function Cities() {
-  return (
-    <section className="cities">
-      <h1>Clima en las ciudades</h1>
-      <p>Seleciona una ciudad para ver como esta hoy su temperatura.</p>
+export default class Cities extends Component{
 
-      <div className="cities-list">
+  state = {
+    cities: []
+  }
 
-          <a href="#" className="city">
-            <span className="icon-map"></span>
-            <h2 className="city-name">Cordoba</h2>
-          </a>
+  async componentDidMount() {
+    this.getCities();
+  }
 
-          <a href="#" className="city">
-            <span className="icon-map"></span>
-            <h2 className="city-name">Sgo del estero</h2>
-          </a>
+  getCities = async () => {
+    const res = await axios.get('http://localhost:4000/api/cities/')
+    this.setState({
+      cities: res.data
+    });
+  }
 
-          <a href="#" className="city">
-            <span className="icon-map"></span>
-            <h2 className="city-name">Santa fe</h2>
-          </a>
+  render(){
+    return (
+      <section className="cities">
+        <h1>Clima en las ciudades</h1>
+        <p>Seleciona una ciudad para ver como esta hoy su temperatura.</p>
+  
+        <div className="cities-list">
+        {
+            this.state.cities.map(city => (
+              <Link to={"/city/" + city._id} className="city" key={city._id}>
+                <span className="icon-map"></span>
+              <h2 className="city-name">{city.nombre}</h2>
+              </Link>
+            ))
+          }  
+        </div>
 
-          <a href="#" className="city">
-            <span className="icon-map"></span>
-            <h2 className="city-name">Bs As</h2>
-          </a>
-
-      </div>
-    </section>
-  );
+      </section>
+    );
+  }
 }
 
-export default Cities;

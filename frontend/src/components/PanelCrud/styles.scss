@@ -44,7 +44,7 @@
         .cities-actions{
             @include col-ct();
             width: 470px;
-            margin-top: 4em;
+            margin-top: 2em;
             .row-list{
                 @include row-bt();
                 padding: 0.5em;

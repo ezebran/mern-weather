@@ -1,3 +1,48 @@
-h3{
-    color:red;
+@import './../../../variables';
+
+.city-view{
+    @include col-ct();
+    padding: 3em 2em 1em;
+    width: 100%;
+    height: calc(100vh - 51px);
+    .clime-card{
+        @include col-ct();
+        background: white;
+        padding: 2em 4em;
+        border-radius: 3px;
+        h1, h2, p, h3{
+            color:$black-txt;
+        }
+        .w-dates{
+            @include row-ct();
+            margin-top: 3em;
+            li{
+                @include col-ct();
+                padding: 1.5em 1em;
+                border-right: 1px solid rgb(200,200,200);
+                &:last-child{
+                    border-right: none;
+                }
+                p{
+                    font-weight: 500;
+                    font-size: 0.8em;
+                    text-transform: uppercase;
+                    color: rgb(90,90,90);
+                    margin-bottom: 1.5em;
+                }
+                h3{
+                    font-weight: 300;
+                }
+            }
+        }
+        h1{
+            font-weight: 500;
+            font-size: 2.75em;
+        }
+        h2{
+            font-weight: 300;
+            font-size: 1.8em;
+            letter-spacing: 2px;
+        }
+    }
 }
