@@ -13,3 +13,4 @@ app.use(express.json());
 app.use('/api/cities', require('./routes/cities.js'));
 
 module.exports = app;
+

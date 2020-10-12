@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import './styles.scss';
+import dotenv from 'dotenv';
 
 export default class City extends Component{
 
@@ -13,7 +14,8 @@ export default class City extends Component{
   }
 
   getCity = async () => {
-    const res = await axios.get('http://localhost:4000/api/cities/' + this.props.location.pathname.slice(6))
+    const url = process.env.REACT_APP_URI ? process.env.REACT_APP_URI : 'http://localhost:4000';
+    const res = await axios.get(`${url}/api/cities/${this.props.location.pathname.slice(6)}`)
     this.setState({
       city: res.data
     });

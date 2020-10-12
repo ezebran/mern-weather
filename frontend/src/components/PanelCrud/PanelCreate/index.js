@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './styles.scss';
+import dotenv from 'dotenv';
 
 export default class PanelCreate extends Component{
 
@@ -23,7 +24,8 @@ export default class PanelCreate extends Component{
       presion: this.state.presion,
       humedad: this.state.humedad
     };
-    axios.post('http://localhost:4000/api/cities', newCity);
+    const url = process.env.REACT_APP_URI ? process.env.REACT_APP_URI : 'http://localhost:4000';
+    axios.post(`${url}/api/cities`, newCity);
     window.location.href = '/';
 
 }

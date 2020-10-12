@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './styles.scss';
+import dotenv from 'dotenv';
 
 export default class PanelEdit extends Component {
 
@@ -18,7 +19,8 @@ export default class PanelEdit extends Component {
   }
 
   getCity = async () => {
-    const res = await axios.get('http://localhost:4000/api/cities/' + this.props.match.params.id)
+    const url = process.env.REACT_APP_URI ? process.env.REACT_APP_URI : 'http://localhost:4000';
+    const res = await axios.get(`${url}/api/cities/${this.props.match.params.id}`)
     this.setState({
       nombre: res.data.nombre,
       temperatura: res.data.temperatura,
@@ -40,7 +42,8 @@ export default class PanelEdit extends Component {
       presion: this.state.presion,
       humedad: this.state.humedad
     };
-    axios.put('http://localhost:4000/api/cities/' + this.props.match.params.id, updateCity);
+    const url = process.env.REACT_APP_URI ? process.env.REACT_APP_URI : 'http://localhost:4000';
+    axios.put(`${url}/api/cities/${this.props.match.params.id}`, updateCity);
     window.location.href = '/';
 
 }

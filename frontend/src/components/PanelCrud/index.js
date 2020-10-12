@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './styles.scss';
+import dotenv from 'dotenv';
 
 export default class PanelCrud extends Component{
 
@@ -14,14 +15,16 @@ export default class PanelCrud extends Component{
   }
 
   getCities = async () => {
-    const res = await axios.get('http://localhost:4000/api/cities/')
+    const url = process.env.REACT_APP_URI ? process.env.REACT_APP_URI : 'http://localhost:4000';
+    const res = await axios.get(`${url}/api/cities/`);
     this.setState({
       cities: res.data
     });
   }
 
   deleteCity = async (cityId) => {
-    await axios.delete('http://localhost:4000/api/cities/' + cityId);
+    const url = process.env.REACT_APP_URI ? process.env.REACT_APP_URI : 'http://localhost:4000';
+    await axios.delete(`${url}/api/cities/${cityId}`);
 
     this.setState({cities: this.state.cities.filter(function(city) { 
       return city._id !== cityId 
