@@ -46,3 +46,19 @@
         }
     }
 }
+
+//Responsive
+
+@media screen and (max-width: 780px) { //PARA TABLET
+    .city-view{
+        .clime-card{
+            .w-dates{
+                @include col-ct();
+                li{
+                    padding: 0.75em 0;
+                    border-right: none;
+                }
+            }
+        }
+    }
+}

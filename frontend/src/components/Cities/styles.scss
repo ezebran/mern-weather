@@ -8,16 +8,31 @@
         font-weight: 700;
         margin-bottom: 0.4em;
         font-size: 2em;
+        text-align: center;
     }
     p{
         color: $black-txt;
         font-style: italic;
         font-weight: 100;
+        text-align: center;
     }
     .cities-list{
         @include row-ar();
         padding: 4em 0;
         width: 60%;
         max-width: 790px;
+    }
+}
+
+//Responsive
+
+@media screen and (max-width: 780px) { //PARA TABLET
+    .cities{
+        .cities-list{
+            width: 100%;
+            .city{
+                margin: 1em;
+            }
+        }
     }
 }

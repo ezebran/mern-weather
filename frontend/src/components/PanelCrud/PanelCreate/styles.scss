@@ -8,11 +8,13 @@
         font-weight: 700;
         margin-bottom: 0.4em;
         font-size: 2em;
+        text-align: center;
     }
     p{
         color: $black-txt;
         font-style: italic;
         font-weight: 100;
+        text-align: center;
     }
     .add-city-form{
         @include col-ct();
