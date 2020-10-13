@@ -3,7 +3,7 @@
 El sistema consta de un sistema CRUD, _Create, Read, Update and Delete_ , osea que se pueden crear, leer, editar y eliminar ciudades con sus datos 
 de clima, notaran al abrir una ciudad que el color de fondo cambia de acuerdo a la temperatura, frio, normal y caluroso.
 
-[Ver proyecto montado en Heroku](https://climeapp-front.herokuapp.com/)
+[Ver proyecto montado en Heroku](https://climeapp-front.herokuapp.com/) _Puede Tardar unos segundos en cargar el front y luego traer los datos, solo al principio, por que estan en servicios gratuitos de heroku_
 
 ## 📋 Pasos para el desarrollo
 
@@ -17,7 +17,7 @@ manejo de variables de entorno use la dependencia _dotenv_ , y para como ORM par
 
 * **Desarrollo del FrontEnd** - *FrontEnd development* -
 Para el Frontend use React, y decidi usar react-router para no poner todo en una sola pantalla, para las peticiones HTTP al server use la dependencia _axios_ y como pre-procesador
-de CSS use SASS, para la cual use la dependecia _node-sass_ .
+de CSS use SASS, para la cual use la dependecia _node-sass_, tambien hice el responsive design.
 
 * **Deployment de la App** - *Deploy en heroku* -
 Para hacer el deploy use heroku, y mongoDB atlas para la BD, el backend y el frontend estan en dos apps distintas de heroku, ambas usan variables de entorno, en el caso del frontend es para definir la url utilizadas en las _queries HTTP_. 
@@ -35,6 +35,7 @@ Para hacer el deploy use heroku, y mongoDB atlas para la BD, el backend y el fro
 * **React-router**
 * **Node-sass** 
 * **Heroku**
+* **Responsive Design**
 
 ## 📦 Instalación
 
